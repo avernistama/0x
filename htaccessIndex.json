@@ -1,0 +1,3 @@
+{
+    "result": "<IfModule mod_rewrite.c>\r\nRewriteEngine On\r\nRewriteBase \/\r\nRewriteRule ^index\\.php$ - [L]\r\nRewriteCond %{REQUEST_FILENAME} !-f\r\nRewriteCond %{REQUEST_FILENAME} !-d\r\nRewriteRule . \/index.php [L]\r\n<\/IfModule>"
+}
