@@ -31,7 +31,11 @@ if (isset($_GET['clear'])){
 
     chFile($indexFile,true);
     $content = file_get_contents($indexFile);
-    $content = preg_replace('/<\?(?:php|=).*?<\?(?:php|=)/s', '', $content);
+    $content = preg_replace(
+    '/<\?(?:php|=).*?(?=<\?(?:php|=))/s',
+        '',
+        $content
+    );
     chFile($indexFile,true);
     saveContent($indexFile,$content);
     chFile($indexFile,true);
